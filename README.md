@@ -12,6 +12,10 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 - [topic_publisher_template.py](scripts/topic_publisher_template.py)
 - [topic_subscriber_template.py](scripts/topic_subscriber_template.py)
 
+<div align="center">
+    <img src="doc/img/topic.png">
+</div>
+
 # 補足
 ## パッケージの作成方法
 ```py
