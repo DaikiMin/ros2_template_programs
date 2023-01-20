@@ -35,7 +35,7 @@ ros_template_programs::TopicPublisher::TopicPublisher() : Node("topic_publisher_
 
 int main(int argc, char * argv[]) {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<ros_template_programs::TopicPublisher >());
+    rclcpp::spin(std::make_shared<ros_template_programs::TopicPublisher>());
     rclcpp::shutdown();
     return 0;
 }
