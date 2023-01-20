@@ -10,19 +10,18 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 ```
 - [topic_template_py.xml](launch/topic_template_py.xml)
 - [topic_publisher_template.py](scripts/topic_publisher_template.py)
-<!-- - [topic_subscriber_template.py](/scripts/topic_subscriber_template.py) -->
+- [topic_subscriber_template.py](scripts/topic_subscriber_template.py)
 
-
-# パッケージの作成方法
+# 補足
+## パッケージの作成方法
 ```py
 # ament_cmake
 $ ros2 pkg create package_name --build-type ament_cmake --dependencies rclcpp rclpy std_msgs
 # ament_python
 $ ros2 pkg create package_name --build-type ament_python --dependencies rclcpp rclpy std_msgs
 ```
-参考：[ROS2プロジェクトの作成](https://qiita.com/NeK/items/1d13d41bd0565e8da854)
 
-# ビルド
+## ビルド
 ```py
 # 全パッケージのビルド
 $ colcon build
@@ -39,6 +38,7 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [Writing a simple publisher and subscriber (Python)](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
 - [Using parameters in a class (Python)](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-Python.html)
 - [ROS2でyamlファイルからパラメータを設定する。](https://qiita.com/shigeharu_shibahata/items/82e8f562d2e6395ba115)
+- [ROS2プロジェクトの作成](https://qiita.com/NeK/items/1d13d41bd0565e8da854)
 - [メタビルドシステムament](https://www.youtalk.jp/2017/05/29/ament.html)
 - [[ROS2 foxy] c++とpython共存パッケージのテンプレート](https://qiita.com/ousagi_sama/items/e1eb921f1b2e6b890133)
 - [Create a ROS2 package for Both Python and Cpp Nodes](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/)
