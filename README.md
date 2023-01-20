@@ -8,7 +8,7 @@ std_msgs/String型のmessageをtopic通信
 ```bash
 $ ros2 launch ros2_template_programs topic_template.xml
 ```
-- [topic_template.launch](launch/topic_template.launch)
+- [topic_template.xml](launch/topic_template.launch)
 - [topic_publisher_template.cpp](src/topic_publisher_template.cpp)
 - [topic_subscriber_template.cpp](src/topic_subscriber_template.cpp)
 
