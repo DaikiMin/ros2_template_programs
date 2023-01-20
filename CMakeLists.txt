@@ -20,16 +20,21 @@ find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 
 #--- for C++
-# # Include Cpp "include" directory
-# include_directories(include)
-# # Create Cpp executable
-# add_executable(cpp_executable src/cpp_node.cpp)
-# ament_target_dependencies(cpp_executable rclcpp)
-# # Install Cpp executables
-# install(TARGETS
-#   cpp_executable
-#   DESTINATION lib/${PROJECT_NAME}
-# )
+# Include Cpp "include" directory
+include_directories(include)
+# Create Cpp executable
+add_executable(topic_publisher_template src/topic_publisher_template.cpp)
+ament_target_dependencies(topic_publisher_template rclcpp std_msgs)
+
+add_executable(topic_subscriber_template src/topic_subscriber_template.cpp)
+ament_target_dependencies(topic_subscriber_template rclcpp std_msgs)
+
+# Install Cpp executables
+install(TARGETS
+  topic_publisher_template
+  topic_subscriber_template
+  DESTINATION lib/${PROJECT_NAME}
+)
 #--- end C++
 
 #-- for Python
