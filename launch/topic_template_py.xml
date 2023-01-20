@@ -1,0 +1,17 @@
+<launch>
+    <group>
+        <push-ros-namespace namespace="topic_template"/>
+        <!-- publisher -->
+        <node pkg="ros2_template_programs" exec="topic_publisher_template.py" name="publisher1" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+            <param name="message" value="Hello, SOBIT members!! 1"/>
+            <!-- <param from="path/to/file.yml"/> -->
+        </node>
+        <node pkg="ros2_template_programs" exec="topic_publisher_template.py" name="publisher2" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+            <param name="message" value="Hello, SOBIT members!! 2"/>
+            <!-- <param from="path/to/file.yml"/> -->
+        </node>
+        <!-- subscriber -->
+        <node pkg="ros2_template_programs" exec="topic_subscriber_template.py" name="subscriber" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+        </node>
+    </group>
+</launch>

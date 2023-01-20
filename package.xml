@@ -4,12 +4,16 @@
   <name>ros2_template_programs</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="sobits@todo.todo">sobits</maintainer>
+  <maintainer email="tmp@todo.todo">DaikiMin</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
