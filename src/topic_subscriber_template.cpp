@@ -23,8 +23,7 @@ ros_template_programs::TopicSubscriber::TopicSubscriber() : Node("topic_subscrib
     sub_msg_ = this->create_subscription<std_msgs::msg::String>( "topic", 10, std::bind(&TopicSubscriber::callbackMessage, this, _1));
 }
 
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     rclcpp::init(argc, argv);
     rclcpp::spin(std::make_shared<ros_template_programs::TopicSubscriber>());
     rclcpp::shutdown();
