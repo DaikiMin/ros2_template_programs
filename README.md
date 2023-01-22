@@ -1,6 +1,16 @@
 # ROS2 Template Programs(開発中)
 ROS2のトピック通信、サービス通信、アクションのテンプレートプログラム
 
+# Packages
+## ros2_template_programs
+- ROS2のトピック通信、サービス通信、アクションのテンプレートプログラム
+- Launchファイル
+
+## ros2_custom_msg
+- カスタムメッセージやサービス
+※ 同じCMakeプロジェクトで`rosidl_generate_interfaces`と `ament_python_install_package`を呼び出すとうまくいきません。  
+※ メッセージの生成は別のパッケージに分離するのがベストプラクティスです。
+
 # Topic
 std_msgs/String型のmessageをtopic通信
 
@@ -8,17 +18,17 @@ std_msgs/String型のmessageをtopic通信
 ```bash
 $ ros2 launch ros2_template_programs topic_template.xml
 ```
-- [topic_template.xml](launch/topic_template.launch)
-- [topic_publisher_template.cpp](src/topic_publisher_template.cpp)
-- [topic_subscriber_template.cpp](src/topic_subscriber_template.cpp)
+- [`ros2_template_programs/launch/topic_template.launch`](ros2_template_programs/launch/topic_template.launch)
+- [`ros2_template_programs/src/topic_publisher_template.cpp`](ros2_template_programs/src/topic_publisher_template.cpp)
+- [`ros2_template_programs/src/topic_subscriber_template.cpp`](ros2_template_programs/src/topic_subscriber_template.cpp)
 
 ## Python
 ```py
 $ ros2 launch ros2_template_programs topic_template_py.xml
 ```
-- [topic_template_py.xml](launch/topic_template_py.xml)
-- [topic_publisher_template.py](scripts/topic_publisher_template.py)
-- [topic_subscriber_template.py](scripts/topic_subscriber_template.py)
+- [`ros2_template_programs/launch/topic_template_py.xml`](ros2_template_programs/launch/topic_template_py.xml)
+- [`ros2_template_programs/scripts/topic_publisher_template.py`](ros2_template_programs/scripts/topic_publisher_template.py)
+- [`ros2_template_programs/scripts/topic_subscriber_template.py`](ros2_template_programs/scripts/topic_subscriber_template.py)
 
 <div align="center">
     <img src="doc/img/topic.png">
@@ -26,12 +36,8 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 
 # Service
 計算式を送り，計算結果を返すサービス通信
-- [Expression.msg](msg/Expression.msg)
-- [Calculation.srv](srv/Calculation.srv)
-
-※ 同じCMakeプロジェクトのCMakeLists.txtで`rosidl_generate_interfaces`と `ament_python_install_package`を呼び出すとうまくいきません。  
-※ メッセージの生成は別のパッケージに分離するのがベストプラクティスです。
-
+- [`ros2_custom_msg/msg/Expression.msg`](ros2_custom_msg/msg/Expression.msg)
+- [`ros2_custom_msg/srv/Calculation.srv`](ros2_custom_msg/srv/Calculation.srv)
 
 ## Python
 
