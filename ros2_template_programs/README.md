@@ -29,7 +29,7 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 - [Expression.msg](msg/Expression.msg)
 - [Calculation.srv](srv/Calculation.srv)
 
-※ 同じCMakeプロジェクトのCMakeLists.txtで`rosidl_generate_interfaces`と `ament_python_install_package`を呼び出すとうまくいきません。  
+※ 同じCMakeプロジェクトで`rosidl_generate_interfaces`と `ament_python_install_package`を呼び出すとうまくいきません。  
 ※ メッセージの生成は別のパッケージに分離するのがベストプラクティスです。
 
 
