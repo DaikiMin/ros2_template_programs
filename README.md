@@ -7,7 +7,7 @@ ROS2のトピック通信、サービス通信、アクションのテンプレ�
 - Launchファイル
 
 ## ros2_custom_msg
-- カスタムメッセージやサービス
+- カスタムメッセージやサービス  
 ※ 同じCMakeプロジェクトで`rosidl_generate_interfaces`と `ament_python_install_package`を呼び出すとうまくいきません。  
 ※ メッセージの生成は別のパッケージに分離するのがベストプラクティスです。
 
