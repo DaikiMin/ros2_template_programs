@@ -3,8 +3,8 @@
         <push-ros-namespace namespace="service_template"/>
         <!-- client -->
         <node pkg="ros2_template_programs" exec="service_client_template.py" name="client" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
-            <param name="a" value="5"/>
-            <param name="b" value="2"/>
+            <param name="a" value="5.0"/>
+            <param name="b" value="2.0"/>
             <!-- <param from="path/to/file.yml"/> -->
         </node>
         <!-- server -->

@@ -17,36 +17,33 @@ class ServiceClient(Node):
         self.declare_parameter( 'b', 1.0)
         self.count = 0
         self.req = Calculation.Request()
-        # self.req.expression.a = self.get_parameter("a").value
-        # self.req.expression.b = self.get_parameter("b").value
-        self.req.expression.a = 1.0
-        self.req.expression.b = 2.0
+        self.req.expression.a = self.get_parameter("a").value
+        self.req.expression.b = self.get_parameter("b").value
 
     def send_request(self):
-        # loop_rate = self.create_rate(1)
-        # while rclpy.ok():
-        if self.count%4 == 0:
-            self.req.expression.calculate = '+'
-        elif self.count%4 == 1:
-            self.req.expression.calculate = '-'
-        elif self.count%4 == 2:
-            self.req.expression.calculate = '*'
-        else:
-            self.req.expression.calculate = '/'
-        self.future = self.client.call_async(self.req)
-        # rclpy.spin_until_future_complete(self, self.future)
-        rclpy.spin_once(self)
-        # See if the service has replied
-        if self.future.done():
-            try:
-                res = self.future.result()
-            except Exception as e:
-                self.get_logger().info(f"Service call failed {e}")
+        loop_rate = self.create_rate(1)
+        while rclpy.ok():
+            if self.count%4 == 0:
+                self.req.expression.calculate = '+'
+            elif self.count%4 == 1:
+                self.req.expression.calculate = '-'
+            elif self.count%4 == 2:
+                self.req.expression.calculate = '*'
             else:
-                self.get_logger().info('Result: %.2f\n' % res.result)
-                self.count += 1
-        else:
-            self.get_logger().info("Service call failed")
+                self.req.expression.calculate = '/'
+            self.future = self.client.call_async(self.req)
+            rclpy.spin_until_future_complete(self, self.future)
+            # See if the service has replied
+            if self.future.done():
+                try:
+                    res = self.future.result()
+                except Exception as e:
+                    self.get_logger().info(f"Service call failed {e}")
+                else:
+                    self.get_logger().info('Result: %.2f\n' % res.result)
+                    self.count += 1
+            else:
+                self.get_logger().info("Service call failed")
             # loop_rate.sleep()
 
 

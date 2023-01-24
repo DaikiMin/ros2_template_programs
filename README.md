@@ -40,7 +40,12 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 - [`ros2_custom_msg/srv/Calculation.srv`](ros2_custom_msg/srv/Calculation.srv)
 
 ## Python
-
+```py
+$ ros2 launch ros2_template_programs service_template_py.xml
+```
+- [`ros2_template_programs/launch/service_template_py.xml`](ros2_template_programs/launch/service_template_py.xml)
+- [`ros2_template_programs/scripts/service_client_template.py`](ros2_template_programs/scripts/service_client_template.py)
+- [`ros2_template_programs/scripts/service_server_template.py`](ros2_template_programs/scripts/service_server_template.py)
 
 # 補足
 ## パッケージの作成方法
@@ -80,3 +85,4 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [ROS 2 EloquentのXML記法を使ったLaunchシステム](https://www.youtalk.jp/2019/12/06/launch-xml.html)
 - [ROS2プログラミング入門 #8 ノードをクラスにする](https://zenn.dev/uchidaryo/articles/ros2-programming-8)
 - [ROS2でコードチェック！](https://hans-robo.hatenablog.com/entry/2020/04/08/084654)
+- [rclpy Params Tutorial – Get and Set ROS2 Params with Python](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/)
