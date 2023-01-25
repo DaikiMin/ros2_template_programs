@@ -100,4 +100,4 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [ROS2プログラミング入門 #8 ノードをクラスにする](https://zenn.dev/uchidaryo/articles/ros2-programming-8)
 - [ROS2でコードチェック！](https://hans-robo.hatenablog.com/entry/2020/04/08/084654)
 - [rclpy Params Tutorial – Get and Set ROS2 Params with Python](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/)
--[ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/)
+- [ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/)
