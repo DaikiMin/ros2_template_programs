@@ -47,6 +47,20 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 - [`ros2_template_programs/scripts/service_client_template.py`](ros2_template_programs/scripts/service_client_template.py)
 - [`ros2_template_programs/scripts/service_server_template.py`](ros2_template_programs/scripts/service_server_template.py)
 
+### Call a service from the callback function
+- コールバック関数からサービスを呼び出そうとすると,`rclpy.spin_until_future_complete(node, future)`でスタックします
+- これは,サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
+- そこで新たに`spin関数`を用意して,そこで結果を読み取ることで解決します
+```py
+$ ros2 launch ros2_template_programs service_client_from_callback_template_py.xml
+```
+- [`ros2_template_programs/launch/service_client_from_callback_template_py.xml`](ros2_template_programs/launch/service_client_from_callback_template_py.xml)
+- [`ros2_template_programs/scripts/service_client_template_from_callback.py`](ros2_template_programs/scripts/service_client_template_from_callback.py)
+
+<div align="center">
+    <img src="img/service.png">
+</div> 
+
 # 補足
 ## パッケージの作成方法
 ```py
@@ -86,3 +100,4 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [ROS2プログラミング入門 #8 ノードをクラスにする](https://zenn.dev/uchidaryo/articles/ros2-programming-8)
 - [ROS2でコードチェック！](https://hans-robo.hatenablog.com/entry/2020/04/08/084654)
 - [rclpy Params Tutorial – Get and Set ROS2 Params with Python](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/)
+-[ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/)

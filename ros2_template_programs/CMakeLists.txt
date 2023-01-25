@@ -46,6 +46,7 @@ install(PROGRAMS
   scripts/topic_publisher_template.py
   scripts/topic_subscriber_template.py
   scripts/service_client_template.py
+  scripts/service_client_from_callback_template.py
   scripts/service_server_template.py
   DESTINATION lib/${PROJECT_NAME}
 )
