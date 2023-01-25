@@ -58,7 +58,7 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xm
 - [`ros2_template_programs/scripts/service_client_template_from_callback.py`](ros2_template_programs/scripts/service_client_template_from_callback.py)
 
 <div align="center">
-    <img src="img/service.png">
+    <img src="doc/img/service.png">
 </div> 
 
 # 補足
