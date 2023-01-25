@@ -30,10 +30,14 @@ ament_target_dependencies(topic_publisher_template rclcpp std_msgs)
 add_executable(topic_subscriber_template src/topic_subscriber_template.cpp)
 ament_target_dependencies(topic_subscriber_template rclcpp std_msgs)
 
+add_executable(service_server_template src/service_server_template.cpp)
+ament_target_dependencies(service_server_template rclcpp ros2_custom_msg)
+
 # Install Cpp executables
 install(TARGETS
   topic_publisher_template
   topic_subscriber_template
+  service_server_template
   DESTINATION lib/${PROJECT_NAME}
 )
 #--- end C++
