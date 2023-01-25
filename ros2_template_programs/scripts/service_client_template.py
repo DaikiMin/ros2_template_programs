@@ -21,7 +21,6 @@ class ServiceClient(Node):
         self.req.expression.b = self.get_parameter("b").value
 
     def send_request(self):
-        loop_rate = self.create_rate(1)
         while rclpy.ok():
             if self.count%4 == 0:
                 self.req.expression.calculate = '+'
@@ -44,7 +43,6 @@ class ServiceClient(Node):
                     self.count += 1
             else:
                 self.get_logger().info("Service call failed")
-            # loop_rate.sleep()
 
 
 def main():

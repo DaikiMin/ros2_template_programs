@@ -3,8 +3,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 
-using std::placeholders::_1;
-
 namespace ros2_template_programs {
     class TopicSubscriber : public rclcpp::Node {
         private:
@@ -20,7 +18,7 @@ void ros2_template_programs::TopicSubscriber::callbackMessage(const std_msgs::ms
 }
 
 ros2_template_programs::TopicSubscriber::TopicSubscriber() : Node("topic_subscriber_template") {
-    sub_msg_ = this->create_subscription<std_msgs::msg::String>( "topic", 10, std::bind(&TopicSubscriber::callbackMessage, this, _1));
+    sub_msg_ = this->create_subscription<std_msgs::msg::String>( "topic", 10, std::bind(&TopicSubscriber::callbackMessage, this, std::placeholders::_1 ));
 }
 
 int main(int argc, char * argv[]) {

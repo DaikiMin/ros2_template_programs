@@ -39,6 +39,20 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 - [`ros2_custom_msg/msg/Expression.msg`](ros2_custom_msg/msg/Expression.msg)
 - [`ros2_custom_msg/srv/Calculation.srv`](ros2_custom_msg/srv/Calculation.srv)
 
+# C++
+```py
+$ ros2 launch ros2_template_programs service_template.xml
+```
+- [`ros2_template_programs/launch/service_template.xml`](ros2_template_programs/launch/service_template.xml)
+- [`ros2_template_programs/scripts/service_client_template.cpp`](ros2_template_programs/scripts/service_client_template.cpp)
+- [`ros2_template_programs/scripts/service_server_template.cpp`](ros2_template_programs/scripts/service_server_template.cpp)
+
+### Call a service from the callback function
+- コールバック関数からサービスを呼び出そうとすると,`rclcpp::spin_until_future_complete(this->get_node_base_interface(), future)`でスタックします
+- これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
+- そこで新たに`callbackRresponse関数`を用意して,そこで結果を読み取ることで解決します
+
+
 ## Python
 ```py
 $ ros2 launch ros2_template_programs service_template_py.xml
@@ -48,9 +62,9 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 - [`ros2_template_programs/scripts/service_server_template.py`](ros2_template_programs/scripts/service_server_template.py)
 
 ### Call a service from the callback function
-- コールバック関数からサービスを呼び出そうとすると,`rclpy.spin_until_future_complete(node, future)`でスタックします
-- これは,サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
-- そこで新たに`spin関数`を用意して,そこで結果を読み取ることで解決します
+- コールバック関数からサービスを呼び出そうとすると,`rclpy.spin_until_future_complete(self, future)`でスタックします
+- これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
+- そこで新たに`spin関数`を用意して，そこで結果を読み取ることで解決します
 ```py
 $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xml
 ```
@@ -97,6 +111,7 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [Create a ROS2 package for Both Python and Cpp Nodes](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/)
 - [ament_cmake_python user documentation](https://docs.ros.org/en/foxy/How-To-Guides/Ament-CMake-Python-Documentation.html)
 - [ROS2プロジェクトの作成](https://qiita.com/NeK/items/1d13d41bd0565e8da854)
+- [ROS2の最小構成service/client:初級 -class style-](https://qiita.com/NeK/items/9d15487d4853638394a3)
 - [メタビルドシステムament](https://www.youtalk.jp/2017/05/29/ament.html)
 - [ROS 2 EloquentのXML記法を使ったLaunchシステム](https://www.youtalk.jp/2019/12/06/launch-xml.html)
 - [ROS2でyamlファイルからパラメータを設定する。](https://qiita.com/shigeharu_shibahata/items/82e8f562d2e6395ba115)
