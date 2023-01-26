@@ -95,6 +95,13 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xm
 ## C++
 
 ## Python
+```py
+$ ros2 launch ros2_template_programs action_template_py.xml
+```
+- [`ros2_template_programs/launch/action_template_py.xml`](ros2_template_programs/launch/action_template_py.xml)
+- [`ros2_template_programs/scripts/action_client_template.py`](ros2_template_programs/scripts/action_client_template.py)
+- [`ros2_template_programs/scripts/action_server_template.py`](ros2_template_programs/scripts/action_server_template.py)
+
 
 # 補足
 ## パッケージの作成方法
