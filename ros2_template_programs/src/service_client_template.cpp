@@ -56,6 +56,7 @@ void ros2_template_programs::ServiceClient::sendRequest() {
         } else {
             RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service calculate_two_numbers");
         }
+        count_++;
     }
 }
 

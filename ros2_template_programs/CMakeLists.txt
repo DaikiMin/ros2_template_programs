@@ -33,6 +33,9 @@ ament_target_dependencies(topic_subscriber_template rclcpp std_msgs)
 add_executable(service_client_template src/service_client_template.cpp)
 ament_target_dependencies(service_client_template rclcpp ros2_custom_msg)
 
+add_executable(service_client_from_callback_template src/service_client_from_callback_template.cpp)
+ament_target_dependencies(service_client_from_callback_template rclcpp ros2_custom_msg)
+
 add_executable(service_server_template src/service_server_template.cpp)
 ament_target_dependencies(service_server_template rclcpp ros2_custom_msg)
 
@@ -41,6 +44,7 @@ install(TARGETS
   topic_publisher_template
   topic_subscriber_template
   service_client_template
+  service_client_from_callback_template
   service_server_template
   DESTINATION lib/${PROJECT_NAME}
 )

@@ -51,6 +51,11 @@ $ ros2 launch ros2_template_programs service_template.xml
 - コールバック関数からサービスを呼び出そうとすると,`rclcpp::spin_until_future_complete(this->get_node_base_interface(), future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`callbackRresponse関数`を用意して,そこで結果を読み取ることで解決します
+```py
+$ ros2 launch ros2_template_programs service_client_from_callback_template.xml
+```
+- [`ros2_template_programs/launch/service_client_from_callback_template.xml`](ros2_template_programs/launch/service_client_from_callback_template.xml)
+- [`ros2_template_programs/scripts/service_client_template_from_callback.cpp`](ros2_template_programs/scripts/service_client_template_from_callback.cpp)
 
 
 ## Python
@@ -107,6 +112,7 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [Creating custom msg and srv files](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)
 - [rclpy Params Tutorial – Get and Set ROS2 Params with Python](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/)
 - [ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/)
+- [ROS2 Service Client in C++ with Classes with Node Inheritance](https://get-help.robotigniteacademy.com/t/ros2-service-client-in-c-with-classes-with-node-inheritance/19647)
 - [[ROS2 foxy] c++とpython共存パッケージのテンプレート](https://qiita.com/ousagi_sama/items/e1eb921f1b2e6b890133)
 - [Create a ROS2 package for Both Python and Cpp Nodes](https://roboticsbackend.com/ros2-package-for-both-python-and-cpp-nodes/)
 - [ament_cmake_python user documentation](https://docs.ros.org/en/foxy/How-To-Guides/Ament-CMake-Python-Documentation.html)
