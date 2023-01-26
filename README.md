@@ -14,6 +14,10 @@ ROS2のトピック通信、サービス通信、アクションのテンプレ�
 # Topic
 std_msgs/String型のmessageをtopic通信
 
+<div align="center">
+    <img src="doc/img/topic.png">
+</div>
+
 ## C++
 ```bash
 $ ros2 launch ros2_template_programs topic_template.xml
@@ -32,14 +36,14 @@ $ ros2 launch ros2_template_programs topic_template_py.xml
 - [`ros2_template_programs/scripts/topic_publisher_template.py`](ros2_template_programs/scripts/topic_publisher_template.py)
 - [`ros2_template_programs/scripts/topic_subscriber_template.py`](ros2_template_programs/scripts/topic_subscriber_template.py)
 
-<div align="center">
-    <img src="doc/img/topic.png">
-</div>
-
 # Service
 計算式を送り，計算結果を返すサービス通信
 - [`ros2_custom_msg/msg/Expression.msg`](ros2_custom_msg/msg/Expression.msg)
 - [`ros2_custom_msg/srv/Calculation.srv`](ros2_custom_msg/srv/Calculation.srv)
+
+<div align="center">
+    <img src="doc/img/service.png">
+</div> 
 
 # C++
 ```py
@@ -80,10 +84,6 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xm
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template_py.xml`](ros2_template_programs/launch/service_client_from_callback_template_py.xml)
 - [`ros2_template_programs/scripts/service_client_from_callback_template.py`](ros2_template_programs/scripts/service_client_from_callback_template.py)
-
-<div align="center">
-    <img src="doc/img/service.png">
-</div> 
 
 # 補足
 ## パッケージの作成方法
