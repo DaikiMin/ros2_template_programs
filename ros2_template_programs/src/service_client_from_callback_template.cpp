@@ -38,10 +38,10 @@ void ros2_template_programs::ServiceClient::callbackTimer() {
         // Wait for the result.
         auto status = future.wait_for(1ms);
         if (status == std::future_status::ready) {
-            RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Call the calculate_two_numbers server\nExpression :%.2f %s %.2f\nResult : %.2f",
+            RCLCPP_INFO(rclcpp::get_logger(), "Call the calculate_two_numbers server\nExpression :%.2f %s %.2f\nResult : %.2f",
         request_->expression.a, request_->expression.calculate.c_str(), request_->expression.b, future.get()->result );
         } else {
-            RCLCPP_INFO(this->get_logger(), "Service In-Progress...");
+            RCLCPP_INFO(this->get_logger("rclcpp"), "Service In-Progress...");
         }
     };
     auto result = client_->async_send_request(request_, response_received_callback);
@@ -52,8 +52,8 @@ void ros2_template_programs::ServiceClient::callbackTimer() {
 ros2_template_programs::ServiceClient::ServiceClient() : Node("service_client_from_callback_template") {
     client_ = this->create_client<ros2_custom_msg::srv::Calculation>("calculate_two_numbers");
     while (!client_->wait_for_service(1s)) {
-        if (!rclcpp::ok()) RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Interrupted while waiting for the service. Exiting.");
-        else RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "service not available, waiting again...");
+        if (!rclcpp::ok()) RCLCPP_ERROR(rclcpp::get_logger(), "Interrupted while waiting for the service. Exiting.");
+        else RCLCPP_INFO(rclcpp::get_logger(), "service not available, waiting again...");
     }
     timer_ = this->create_wall_timer(1s, std::bind(&ServiceClient::callbackTimer, this));
     declare_parameter( "a", 1.0);
