@@ -90,7 +90,11 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xm
 
 # Action
 指定した時間だけ待機するアクション
-- [`ros2_custom_msg/msg/Expression.msg`](ros2_custom_msg/action/Timer.action)
+- [`ros2_custom_msg/action/Timer.action`](ros2_custom_msg/action/Timer.action)
+
+<div align="center">
+    <img src="doc/action/topic.png">
+</div>
 
 ## C++
 
