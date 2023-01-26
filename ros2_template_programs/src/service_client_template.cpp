@@ -25,8 +25,8 @@ namespace ros2_template_programs {
 ros2_template_programs::ServiceClient::ServiceClient() : Node("service_client_template") {
     client_ = this->create_client<ros2_custom_msg::srv::Calculation>("calculate_two_numbers");
     while (!client_->wait_for_service(1s)) {
-        if (!rclcpp::ok()) RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Interrupted while waiting for the service. Exiting.");
-        else RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "service not available, waiting again...");
+        if (!rclcpp::ok()) RCLCPP_ERROR(this->get_logger(), "Interrupted while waiting for the service. Exiting.");
+        else RCLCPP_INFO(this->get_logger(), "service not available, waiting again...");
     }
     declare_parameter( "a", 1.0);
     declare_parameter( "b", 1.0);
@@ -51,10 +51,10 @@ void ros2_template_programs::ServiceClient::sendRequest() {
         auto result = client_->async_send_request(request_);
         // Wait for the result.
         if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), result) == rclcpp::FutureReturnCode::SUCCESS) {
-            RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Call the calculate_two_numbers server\nExpression :%.2f %s %.2f\nResult : %.2f",
+            RCLCPP_INFO(this->get_logger(), "Call the calculate_two_numbers server\nExpression :%.2f %s %.2f\nResult : %.2f",
             request_->expression.a, request_->expression.calculate.c_str(), request_->expression.b, result.get()->result );
         } else {
-            RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service calculate_two_numbers");
+            RCLCPP_ERROR(this->get_logger(), "Failed to call service calculate_two_numbers");
         }
         count_++;
     }
