@@ -93,7 +93,7 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xm
 - [`ros2_custom_msg/action/Timer.action`](ros2_custom_msg/action/Timer.action)
 
 <div align="center">
-    <img src="doc/action/topic.png">
+    <img src="doc/img/action.png">
 </div>
 
 ## C++
