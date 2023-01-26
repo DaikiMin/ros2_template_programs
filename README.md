@@ -56,7 +56,7 @@ $ ros2 launch ros2_template_programs service_template.xml
 - [`ros2_template_programs/scripts/service_server_template.cpp`](ros2_template_programs/scripts/service_server_template.cpp)
 
 ### Call a service from the callback function
-- コールバック関数からサービスを呼び出そうとすると，`rclcpp::spin_until_future_complete(this->get_node_base_interface()， future)`でスタックします
+- コールバック関数からサービスを呼び出そうとすると，`rclcpp::spin_until_future_complete(this->get_node_base_interface(), future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`callbackRresponse関数`を用意して，そこで結果を読み取ることで解決します
 ```py
@@ -76,7 +76,7 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 - [`ros2_template_programs/scripts/service_server_template.py`](ros2_template_programs/scripts/service_server_template.py)
 
 ### Call a service from the callback function
-- コールバック関数からサービスを呼び出そうとすると，`rclpy.spin_until_future_complete(self， future)`でスタックします
+- コールバック関数からサービスを呼び出そうとすると，`rclpy.spin_until_future_complete(self, future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`spin関数`を用意して，そこで結果を読み取ることで解決します
 ```py
