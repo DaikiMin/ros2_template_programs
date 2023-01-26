@@ -1,27 +1,4 @@
-#include <chrono>
-#include <cstdlib>
-#include <memory>
-
-#include "rclcpp/rclcpp.hpp"
-#include "ros2_custom_msg/msg/expression.hpp"
-#include "ros2_custom_msg/srv/calculation.hpp"
-
-using namespace std::chrono_literals;
-
-namespace ros2_template_programs {
-    class ServiceClient  : public rclcpp::Node {
-        private:
-            rclcpp::TimerBase::SharedPtr timer_;
-            rclcpp::Client<ros2_custom_msg::srv::Calculation>::SharedPtr client_;
-            ros2_custom_msg::srv::Calculation::Request::SharedPtr request_;
-            int count_;
-            void callbackTimer();
-
-        public:
-            ServiceClient ();
-            void sendRequest();
-    };
-}
+#include "ros2_template_programs/service_client_from_callback_template.hpp"
 
 void ros2_template_programs::ServiceClient::callbackTimer() {
     if ( count_%4 == 0 ) {
@@ -47,7 +24,6 @@ void ros2_template_programs::ServiceClient::callbackTimer() {
     auto result = client_->async_send_request(request_, response_received_callback);
     count_++;
 }
-
 
 ros2_template_programs::ServiceClient::ServiceClient() : Node("service_client_from_callback_template") {
     client_ = this->create_client<ros2_custom_msg::srv::Calculation>("calculate_two_numbers");

@@ -1,17 +1,4 @@
-#include <memory>
-
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
-
-namespace ros2_template_programs {
-    class TopicSubscriber : public rclcpp::Node {
-        private:
-            rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_msg_;
-            void callbackMessage(const std_msgs::msg::String & msg) const;
-        public:
-            TopicSubscriber();
-    };
-}
+#include "ros2_template_programs/topic_subscriber_template.hpp"
 
 void ros2_template_programs::TopicSubscriber::callbackMessage(const std_msgs::msg::String & msg) const {
     RCLCPP_INFO(this->get_logger(), "Message Subscribed: '%s'", msg.data.c_str());

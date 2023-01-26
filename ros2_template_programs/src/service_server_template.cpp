@@ -1,18 +1,4 @@
-#include <memory>
-
-#include "rclcpp/rclcpp.hpp"
-#include "ros2_custom_msg/msg/expression.hpp"
-#include "ros2_custom_msg/srv/calculation.hpp"
-
-namespace ros2_template_programs {
-    class ServiceServer : public rclcpp::Node {
-        private:
-            rclcpp::Service<ros2_custom_msg::srv::Calculation>::SharedPtr service_;
-            void calculate( const std::shared_ptr<ros2_custom_msg::srv::Calculation::Request> request, std::shared_ptr<ros2_custom_msg::srv::Calculation::Response> response) const;
-        public:
-            ServiceServer();
-    };
-}
+#include "ros2_template_programs/service_server_template.hpp"
 
 void ros2_template_programs::ServiceServer::calculate( const std::shared_ptr<ros2_custom_msg::srv::Calculation::Request> request, std::shared_ptr<ros2_custom_msg::srv::Calculation::Response> response) const {
     ros2_custom_msg::msg::Expression ex = request->expression;
