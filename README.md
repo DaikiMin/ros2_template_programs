@@ -59,8 +59,8 @@ $ ros2 launch ros2_template_programs service_template.xml
 $ ros2 launch ros2_template_programs service_client_from_callback_template.xml
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template.xml`](ros2_template_programs/launch/service_client_from_callback_template.xml)
-- [`ros2_template_programs/include/ros2_template_programs/service_client_template_from_callback.hpp`](ros2_template_programs/include/ros2_template_programs/service_client_template_from_callback.hpp)
-- [`ros2_template_programs/scripts/service_client_template_from_callback.cpp`](ros2_template_programs/scripts/service_client_template_from_callback.cpp)
+- [`ros2_template_programs/include/ros2_template_programs/service_client_from_callback_template.hpp`](ros2_template_programs/include/ros2_template_programs/service_client_from_callback_template.hpp)
+- [`ros2_template_programs/scripts/service_client_from_callback_template.cpp`](ros2_template_programs/scripts/service_client_from_callback_template.cpp)
 
 
 ## Python
@@ -79,7 +79,7 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xml
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template_py.xml`](ros2_template_programs/launch/service_client_from_callback_template_py.xml)
-- [`ros2_template_programs/scripts/service_client_template_from_callback.py`](ros2_template_programs/scripts/service_client_template_from_callback.py)
+- [`ros2_template_programs/scripts/service_client_from_callback_template.py`](ros2_template_programs/scripts/service_client_from_callback_template.py)
 
 <div align="center">
     <img src="doc/img/service.png">
