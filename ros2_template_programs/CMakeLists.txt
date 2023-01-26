@@ -19,6 +19,8 @@ find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(ros2_custom_msg REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(rclcpp_components REQUIRED)
 
 #--- for C++
 # Include Cpp "include" directory
@@ -48,6 +50,26 @@ install(TARGETS
   service_server_template
   DESTINATION lib/${PROJECT_NAME}
 )
+
+add_library(action_server_template SHARED
+  src/action_server_template.cpp)
+target_include_directories(action_server_template PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_definitions(action_server_template
+  PRIVATE "ACTION_TUTORIALS_CPP_BUILDING_DLL")
+ament_target_dependencies(action_server_template
+  "ros2_custom_msg"
+  "rclcpp"
+  "rclcpp_action"
+  "rclcpp_components")
+rclcpp_components_register_node(action_server_template PLUGIN "action_server_template::ActionServer" EXECUTABLE action_server)
+install(TARGETS
+action_server_template
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+
 #--- end C++
 
 #-- for Python
