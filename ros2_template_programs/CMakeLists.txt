@@ -60,6 +60,8 @@ install(PROGRAMS
   scripts/service_client_template.py
   scripts/service_client_from_callback_template.py
   scripts/service_server_template.py
+  scripts//action_client_template.py
+  scripts/action_server_template.py
   DESTINATION lib/${PROJECT_NAME}
 )
 #--- end Python

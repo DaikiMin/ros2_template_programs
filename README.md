@@ -59,6 +59,8 @@ $ ros2 launch ros2_template_programs service_template.xml
 - コールバック関数からサービスを呼び出そうとすると，`rclcpp::spin_until_future_complete(this->get_node_base_interface(), future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`callbackRresponse関数`を用意して，そこで結果を読み取ることで解決します
+- [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
+
 ```py
 $ ros2 launch ros2_template_programs service_client_from_callback_template.xml
 ```
@@ -79,11 +81,20 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 - コールバック関数からサービスを呼び出そうとすると，`rclpy.spin_until_future_complete(self, future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`spin関数`を用意して，そこで結果を読み取ることで解決します
+- [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
 ```py
 $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xml
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template_py.xml`](ros2_template_programs/launch/service_client_from_callback_template_py.xml)
 - [`ros2_template_programs/scripts/service_client_from_callback_template.py`](ros2_template_programs/scripts/service_client_from_callback_template.py)
+
+# Action
+指定した時間だけ待機するアクション
+- [`ros2_custom_msg/msg/Expression.msg`](ros2_custom_msg/action/Timer.action)
+
+## C++
+
+## Python
 
 # 補足
 ## パッケージの作成方法
@@ -113,8 +124,12 @@ $ colcon build　--symlink-install --packages-up-to package_name
 - [Writing a simple service and client (C++)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Service-And-Client.html)
 - [Writing a simple service and client (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client.html)
 - [Using parameters in a class (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-Python.html)
+- [Writing an action server and client (C++)](https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-an-Action-Server-Client/Cpp.html)
+- [Writing an action server and client (Python)](https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-an-Action-Server-Client/Py.html)
 - [Creating a launch file](https://docs.ros.org/en/humble/Tutorials/Intermediate/Launch/Creating-Launch-Files.html)
 - [Creating custom msg and srv files](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html)
+- [Creating an action](https://docs.ros.org/en/humble/Tutorials/Intermediate/Creating-an-Action.html)
+- [Using Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)
 - [rclpy Params Tutorial – Get and Set ROS2 Params with Python](https://roboticsbackend.com/rclpy-params-tutorial-get-set-ros2-params-with-python/)
 - [ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/)
 - [ROS2 Service Client in C++ with Classes with Node Inheritance](https://get-help.robotigniteacademy.com/t/ros2-service-client-in-c-with-classes-with-node-inheritance/19647)
