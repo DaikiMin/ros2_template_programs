@@ -22,7 +22,7 @@ std_msgs/String型のmessageをtopic通信
 ```bash
 $ ros2 launch ros2_template_programs topic_template.xml
 ```
-- [`ros2_template_programs/launch/topic_template.launch`](ros2_template_programs/launch/topic_template.launch)
+- [`ros2_template_programs/launch/topic_template.xml`](ros2_template_programs/launch/topic_template.xml)
 - [`ros2_template_programs/include/ros2_template_programs/topic_publisher_template.hpp`](ros2_template_programs/include/ros2_template_programs/topic_publisher_template.hpp)
 - [`ros2_template_programs/src/topic_publisher_template.cpp`](ros2_template_programs/src/topic_publisher_template.cpp)
 - [`ros2_template_programs/include/ros2_template_programs/topic_subscriber_template.hpp`](ros2_template_programs/include/ros2_template_programs/topic_subscriber_template.hpp)
