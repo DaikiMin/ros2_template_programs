@@ -1,0 +1,12 @@
+<launch>
+    <group>
+        <push-ros-namespace namespace="action_template"/>
+        <!-- client -->
+        <node pkg="ros2_template_programs" exec="timer_action_client" name="client" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+            <param name="target_time" value="10.0"/>
+        </node>
+        <!-- server -->
+        <node pkg="ros2_template_programs" exec="timer_action_server" name="server" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+        </node>
+    </group>
+</launch>

@@ -51,6 +51,7 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# For Action
 add_library(action_server_template SHARED
   src/action_server_template.cpp)
 target_include_directories(action_server_template PRIVATE
@@ -63,9 +64,28 @@ ament_target_dependencies(action_server_template
   "rclcpp"
   "rclcpp_action"
   "rclcpp_components")
-rclcpp_components_register_node(action_server_template PLUGIN "action_server_template::ActionServer" EXECUTABLE action_server)
+rclcpp_components_register_node(action_server_template PLUGIN "ros2_template_programs::ActionServer" EXECUTABLE timer_action_server)
 install(TARGETS
-action_server_template
+  action_server_template
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin)
+
+add_library(action_client_template SHARED
+  src/action_client_template.cpp)
+target_include_directories(action_client_template PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_definitions(action_client_template
+  PRIVATE "ACTION_TUTORIALS_CPP_BUILDING_DLL")
+ament_target_dependencies(action_client_template
+  "ros2_custom_msg"
+  "rclcpp"
+  "rclcpp_action"
+  "rclcpp_components")
+rclcpp_components_register_node(action_client_template PLUGIN "ros2_template_programs::ActionClient" EXECUTABLE timer_action_client)
+install(TARGETS
+  action_client_template
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin)

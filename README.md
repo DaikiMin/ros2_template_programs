@@ -51,9 +51,9 @@ $ ros2 launch ros2_template_programs service_template.xml
 ```
 - [`ros2_template_programs/launch/service_template.xml`](ros2_template_programs/launch/service_template.xml)
 - [`ros2_template_programs/include/ros2_template_programs/service_client_template.hpp`](ros2_template_programs/include/ros2_template_programs/service_client_template.hpp)
-- [`ros2_template_programs/scripts/service_client_template.cpp`](ros2_template_programs/scripts/service_client_template.cpp)
+- [`ros2_template_programs/src/service_client_template.cpp`](ros2_template_programs/src/service_client_template.cpp)
 - [`ros2_template_programs/include/ros2_template_programs/service_server_template.hpp`](ros2_template_programs/include/ros2_template_programs/service_server_template.hpp)
-- [`ros2_template_programs/scripts/service_server_template.cpp`](ros2_template_programs/scripts/service_server_template.cpp)
+- [`ros2_template_programs/src/service_server_template.cpp`](ros2_template_programs/src/service_server_template.cpp)
 
 ### Call a service from the callback function
 - コールバック関数からサービスを呼び出そうとすると，`rclcpp::spin_until_future_complete(this->get_node_base_interface(), future)`でスタックします
@@ -66,7 +66,7 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template.xml
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template.xml`](ros2_template_programs/launch/service_client_from_callback_template.xml)
 - [`ros2_template_programs/include/ros2_template_programs/service_client_from_callback_template.hpp`](ros2_template_programs/include/ros2_template_programs/service_client_from_callback_template.hpp)
-- [`ros2_template_programs/scripts/service_client_from_callback_template.cpp`](ros2_template_programs/scripts/service_client_from_callback_template.cpp)
+- [`ros2_template_programs/src/service_client_from_callback_template.cpp`](ros2_template_programs/src/service_client_from_callback_template.cpp)
 
 
 ## Python
@@ -97,6 +97,12 @@ $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xm
 </div>
 
 ## C++
+```py
+$ ros2 launch ros2_template_programs action_template.xml
+```
+- [`ros2_template_programs/launch/action_template.xml`](ros2_template_programs/launch/action_template.xml)
+- [`ros2_template_programs/src/action_client_template.cpp`](ros2_template_programs/src/action_client_template.cpp)
+- [`ros2_template_programs/src/action_server_template.cpp`](ros2_template_programs/src/action_server_template.cpp)
 
 ## Python
 ```py

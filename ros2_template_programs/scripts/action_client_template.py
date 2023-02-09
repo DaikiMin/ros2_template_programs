@@ -41,7 +41,7 @@ class TimerActionClient(Node):
 def main(args=None):
     rclpy.init(args=args)
     action_client = TimerActionClient()
-    action_client.declare_parameter( 'target_time', 1.0)
+    action_client.declare_parameter( 'target_time', 5.0)
     try:
         action_client.send_goal(action_client.get_parameter('target_time').value)
         rclpy.spin(action_client)

@@ -3,7 +3,7 @@
         <push-ros-namespace namespace="action_template"/>
         <!-- client -->
         <node pkg="ros2_template_programs" exec="action_client_template.py" name="client" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
-            <param name="target_time" value="5.0"/>
+            <param name="target_time" value="10.0"/>
         </node>
         <!-- server -->
         <node pkg="ros2_template_programs" exec="action_server_template.py" name="server" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
