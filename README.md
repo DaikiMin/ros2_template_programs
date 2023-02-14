@@ -58,7 +58,7 @@ $ ros2 launch ros2_template_programs service_template.xml
 ### Call a service from the callback function
 - コールバック関数からサービスを呼び出そうとすると，`rclcpp::spin_until_future_complete(this->get_node_base_interface(), future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
-- そこで新たに`callbackRresponse関数`を用意して，そこで結果を読み取ることで解決します
+- そこで新たに`callbackRresponse関数`を用意して，そこで結果を読み取ることで解決します(参考：[ROS2 Service Client in C++ with Classes with Node Inheritance](https://get-help.robotigniteacademy.com/t/ros2-service-client-in-c-with-classes-with-node-inheritance/19647))
 - [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
 
 ```py
@@ -80,7 +80,7 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 ### Call a service from the callback function
 - コールバック関数からサービスを呼び出そうとすると，`rclpy.spin_until_future_complete(self, future)`でスタックします
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
-- そこで新たに`spin関数`を用意して，そこで結果を読み取ることで解決します
+- そこで新たに`spin関数`を用意して，そこで結果を読み取ることで解決します(参考：[ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/))
 - [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
 ```py
 $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xml
