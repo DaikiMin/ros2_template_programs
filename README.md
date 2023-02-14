@@ -60,14 +60,21 @@ $ ros2 launch ros2_template_programs service_template.xml
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`callbackRresponse関数`を用意して，そこで結果を読み取ることで解決します
     - 参考：[ROS2 Service Client in C++ with Classes with Node Inheritance](https://get-help.robotigniteacademy.com/t/ros2-service-client-in-c-with-classes-with-node-inheritance/19647)
-- [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
-
 ```py
 $ ros2 launch ros2_template_programs service_client_from_callback_template.xml
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template.xml`](ros2_template_programs/launch/service_client_from_callback_template.xml)
 - [`ros2_template_programs/include/ros2_template_programs/service_client_from_callback_template.hpp`](ros2_template_programs/include/ros2_template_programs/service_client_from_callback_template.hpp)
 - [`ros2_template_programs/src/service_client_from_callback_template.cpp`](ros2_template_programs/src/service_client_from_callback_template.cpp)
+
+### Callback Groups
+- この問題は，[Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できます
+```py
+$ ros2 launch ros2_template_programs service_client_callback_group_template.xml
+```
+- [`ros2_template_programs/launch/service_client_callback_group_template.xml`](ros2_template_programs/launch/service_client_callback_group_template.xml)
+- [`ros2_template_programs/include/ros2_template_programs/service_client_callback_group_template.hpp`](ros2_template_programs/include/ros2_template_programs/service_client_callback_group_template.hpp)
+- [`ros2_template_programs/src/service_client_callback_group_template.cpp`](ros2_template_programs/src/service_client_callback_group_template.cpp)
 
 
 ## Python
@@ -83,12 +90,23 @@ $ ros2 launch ros2_template_programs service_template_py.xml
 - これは，サービスの処理よりも早くコールバック関数が呼ばれる可能性があるからです
 - そこで新たに`spin関数`を用意して，そこで結果を読み取ることで解決します
     - 参考：[ROS2 : How to call a service from the callback function of a subscriber ?](https://answers.ros.org/question/302037/ros2-how-to-call-a-service-from-the-callback-function-of-a-subscriber/)
-- [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
+
 ```py
 $ ros2 launch ros2_template_programs service_client_from_callback_template_py.xml
 ```
 - [`ros2_template_programs/launch/service_client_from_callback_template_py.xml`](ros2_template_programs/launch/service_client_from_callback_template_py.xml)
 - [`ros2_template_programs/scripts/service_client_from_callback_template.py`](ros2_template_programs/scripts/service_client_from_callback_template.py)
+
+### Callback Groups
+- [Callback Groups](https://docs.ros.org/en/foxy/How-To-Guides/Using-callback-groups.html)でも解決できるそう
+    - 参考：[Asynchronous client calls in a timer cause the timer to never execute a second time.](https://github.com/ros2/rclpy/issues/1018)
+
+```py
+$ ros2 launch ros2_template_programs service_client_callback_group_template_py.xml
+```
+- [`ros2_template_programs/launch/service_client_callback_group_template_py.xml`](ros2_template_programs/launch/service_client_callback_group_template_py.xml)
+- [`ros2_template_programs/scripts/service_client_callback_group_template.py`](ros2_template_programs/scripts/service_client_callback_group_template.py)
+
 
 # Action
 指定した時間だけ待機するアクション

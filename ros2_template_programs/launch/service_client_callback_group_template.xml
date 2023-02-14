@@ -1,0 +1,14 @@
+<launch>
+    <group>
+        <push-ros-namespace namespace="service_template"/>
+        <!-- client -->
+        <node pkg="ros2_template_programs" exec="service_client_callback_group_template" name="client" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+            <param name="a" value="5.0"/>
+            <param name="b" value="2.0"/>
+            <!-- <param from="path/to/file.yml"/> -->
+        </node>
+        <!-- server -->
+        <node pkg="ros2_template_programs" exec="service_server_template" name="server" launch-prefix="xterm -font r16 -fg floralwhite -bg darkslateblue -e">
+        </node>
+    </group>
+</launch>

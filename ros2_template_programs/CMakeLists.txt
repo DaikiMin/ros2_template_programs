@@ -38,6 +38,9 @@ ament_target_dependencies(service_client_template rclcpp ros2_custom_msg)
 add_executable(service_client_from_callback_template src/service_client_from_callback_template.cpp)
 ament_target_dependencies(service_client_from_callback_template rclcpp ros2_custom_msg)
 
+add_executable(service_client_callback_group_template src/service_client_callback_group_template.cpp)
+ament_target_dependencies(service_client_callback_group_template rclcpp ros2_custom_msg)
+
 add_executable(service_server_template src/service_server_template.cpp)
 ament_target_dependencies(service_server_template rclcpp ros2_custom_msg)
 
@@ -47,6 +50,7 @@ install(TARGETS
   topic_subscriber_template
   service_client_template
   service_client_from_callback_template
+  service_client_callback_group_template
   service_server_template
   DESTINATION lib/${PROJECT_NAME}
 )
@@ -101,6 +105,7 @@ install(PROGRAMS
   scripts/topic_subscriber_template.py
   scripts/service_client_template.py
   scripts/service_client_from_callback_template.py
+  scripts/service_client_callback_group_template.py
   scripts/service_server_template.py
   scripts//action_client_template.py
   scripts/action_server_template.py
