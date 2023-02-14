@@ -1,4 +1,4 @@
-# ROS2 Template Programs(開発中)
+# ROS2 Template Programs
 ROS2のトピック通信、サービス通信、アクションのテンプレートプログラム
 
 # Packages
